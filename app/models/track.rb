@@ -5,5 +5,6 @@ class Track < ApplicationRecord
   has_many :plays, class_name: 'Playlist'
   has_many :episodes_played_on, through: :plays, source: :episode
 
-  validates :title, presence: true
+  validates :title, :year, presence: true
+  validates :year, inclusion: 1900..(Time.now.year + 1)
 end
