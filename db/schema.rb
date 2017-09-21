@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170921180347) do
+ActiveRecord::Schema.define(version: 20170921180547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,11 @@ ActiveRecord::Schema.define(version: 20170921180347) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "genres_tracks", id: false, force: :cascade do |t|
+    t.bigint "track_id", null: false
+    t.bigint "genre_id", null: false
   end
 
   create_table "labels", force: :cascade do |t|
