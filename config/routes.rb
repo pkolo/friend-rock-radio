@@ -6,5 +6,7 @@ Rails.application.routes.draw do
     resources :episodes, only: [:index, :new]
   end
 
-  resources :episodes, only: [:edit]
+  resources :episodes, only: [:edit] do
+    resources :playlists, only: [:create]
+  end
 end

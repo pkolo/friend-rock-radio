@@ -17,10 +17,6 @@ class EpisodesController < ApplicationController
     end
   end
 
-  def edit
-    @episode = Episode.find(params[:id])
-  end
-
   private
     def episode_params
       params.require(:episode).permit(:title)
