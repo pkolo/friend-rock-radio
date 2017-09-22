@@ -15,7 +15,7 @@ gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'
-
+gem 'jquery-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
@@ -28,6 +28,10 @@ gem 'turbolinks', '~> 5'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'geocoder'
+
+# Form helpers
+gem 'simple_form'
+gem 'cocoon'
 
 group :development, :test do
   gem 'pry-rails'

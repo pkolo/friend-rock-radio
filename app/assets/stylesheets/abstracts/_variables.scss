@@ -1,0 +1,19 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Regular font family
+/// @type List
+$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+
+/// Copy text color
+/// @type Color
+$text-color: rgb(200, 200, 200) !default;
+
+/// Main brand color
+/// @type Color
+$red: rgb(200, 0, 80) !default;
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1180px !default;
