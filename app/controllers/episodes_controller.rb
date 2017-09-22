@@ -3,4 +3,8 @@ class EpisodesController < ApplicationController
     @show = Show.find(params[:show_id])
     @episodes = @show.episodes.all
   end
+
+  def new
+    @episode = Episode.new
+  end
 end
