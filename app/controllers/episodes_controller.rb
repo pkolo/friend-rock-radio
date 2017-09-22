@@ -5,16 +5,23 @@ class EpisodesController < ApplicationController
   end
 
   def new
+    @show = Show.find(params[:show_id])
     @episode = Episode.new
   end
 
   def create
+    @show = Show.find(params[:show_id])
     @episode = Episode.new(episode_params)
+    @episode.show = @show
     if @episode.save
-      redirect_to episode_edit_path @episode
+      redirect_to edit_episode_path @episode
     else
       render 'new'
     end
+  end
+
+  def edit
+    @episode = Episode.find(params[:id])
   end
 
   private
