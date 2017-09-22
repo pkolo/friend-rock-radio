@@ -29,6 +29,10 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'geocoder'
 
+# Form helpers
+gem 'simple_form'
+gem 'cocoon'
+
 group :development, :test do
   gem 'pry-rails'
 end
