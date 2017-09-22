@@ -1,3 +1,4 @@
-<%= simple_form_for @episode, url: new_show_episode_url do |f| %>
+<%= simple_form_for [@show, @episode] do |f| %>
   <%= f.input :title, label: 'Episode Title' %>
+  <%= f.submit %>
 <% end %>
