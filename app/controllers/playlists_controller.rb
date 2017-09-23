@@ -15,18 +15,15 @@ class PlaylistsController < ApplicationController
                       :_destroy,
                       bands_attributes: [
                         :id,
-                        :name,
-                        :_destroy
+                        :name
                       ],
                       genres_attributes: [
                         :id,
-                        :name,
-                        :_destroy
+                        :name
                       ],
                       labels_attributes: [
                         :id,
-                        :name,
-                        :_destroy
+                        :name
                       ]
                    ]
                   )
