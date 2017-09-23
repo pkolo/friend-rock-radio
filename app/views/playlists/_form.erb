@@ -1,16 +1,16 @@
 <%= simple_form_for [@episode, Playlist.new] do |f| %>
   <%= f.input :time_marker %>
-  <%= simple_fields_for :track do |track| %>
+  <%= f.simple_fields_for :track_attributes do |track| %>
     <%= track.input :title %>
     <%= track.input :year %>
-    <%= simple_fields_for :band do |band| %>
-      <%= band.input :name %>
+    <%= track.simple_fields_for :bands_attributes do |band| %>
+      <%= band.input :name, label: 'bands' %>
     <% end %>
-    <%= simple_fields_for :genre do |genre| %>
-      <%= genre.input :name %>
+    <%= track.simple_fields_for :genres_attributes do |genre| %>
+      <%= genre.input :name, label: 'genres' %>
     <% end %>
-    <%= simple_fields_for :label do |label| %>
-      <%= label.input :name %>
+    <%= track.simple_fields_for :labels_attributes do |label| %>
+      <%= label.input :name, label: 'labels' %>
     <% end %>
   <% end %>
   <%= f.submit %>
