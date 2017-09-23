@@ -23,7 +23,7 @@ class PlaylistsController < ApplicationController
                         :id,
                         :name
                       ]
-                    ]
-      )
+                   ]
+                  )
     end
 end
