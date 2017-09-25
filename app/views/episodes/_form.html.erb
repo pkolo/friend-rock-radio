@@ -10,3 +10,8 @@
   </div>
   <%= f.button :submit %>
 <% end %>
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <p><%= error %></p>
+  <% end %>
+<% end %>

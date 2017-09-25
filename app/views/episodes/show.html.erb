@@ -1,0 +1,9 @@
+<h3><%= @episode.title %></h3>
+<% @episode.playlists.each do |playlist| %>
+  <%= playlist.time_marker %> -
+  <%= playlist.track.title %> -
+  <%= playlist.track.year %> -
+  <%= playlist.track.bands.join(', ') %> -
+  <%= playlist.track.genres.join(', ') %> -
+  <%= playlist.track.labels.join(', ') %>
+<% end %>

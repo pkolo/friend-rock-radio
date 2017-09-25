@@ -14,10 +14,16 @@ class EpisodesController < ApplicationController
     @episode = Episode.new(episode_params)
     @episode.show = @show
     if @episode.save
-      redirect_to edit_episode_path @episode
+      redirect_to show_episode_path @show, @episode
     else
+      @errors = @episode.errors.full_messages
       render 'new'
     end
+  end
+
+  def show
+    @show = Show.find(params[:show_id])
+    @episode = Episode.find(params[:id])
   end
 
   def edit
