@@ -21,6 +21,7 @@ class EpisodesController < ApplicationController
   end
 
   def edit
+    @show = Show.find(params[:show_id])
     @episode = Episode.find(params[:id])
   end
 

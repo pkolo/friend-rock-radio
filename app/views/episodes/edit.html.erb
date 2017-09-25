@@ -1,12 +1,1 @@
-<%= simple_form_for @episode do |f| %>
-  <%= f.input :title, label: 'Episode Title' %>
-  <div id="playlists">
-    <%= f.simple_fields_for :playlists do |playlist| %>
-      <%= render 'playlist_fields', f: playlist %>
-    <% end %>
-    <div class="links">
-      <%= link_to_add_association 'add playlist', f, :playlists %>
-    </div>
-  </div>
-  <%= f.button :submit %>
-<% end %>
+<%= render 'form' %>
