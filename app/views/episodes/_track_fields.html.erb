@@ -1,6 +1,7 @@
 <div class="nested-fields">
   <%= f.input :title %>
   <%= f.input :year %>
+
   <div id="bands">
     <%= f.simple_fields_for :bands do |band| %>
       <%= render 'band_fields', f: band %>
@@ -9,5 +10,24 @@
       <%= link_to_add_association 'add band', f, :bands %>
     </div>
   </div>
+
+  <div id="labels">
+    <%= f.simple_fields_for :labels do |label| %>
+      <%= render 'label_fields', f: label %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'add label', f, :labels %>
+    </div>
+  </div>
+
+  <div id="genres">
+    <%= f.simple_fields_for :genres do |genre| %>
+      <%= render 'genre_fields', f: genre %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'add genre', f, :genres %>
+    </div>
+  </div>
+
   <%= link_to_remove_association "remove track", f %>
 </div>
