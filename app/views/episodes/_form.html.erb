@@ -5,13 +5,8 @@
       <%= render 'playlist_fields', f: playlist %>
     <% end %>
     <div class="links">
-      <%= link_to_add_association 'add playlist', f, :playlists %>
+      <%= link_to_add_association 'add playlist item', f, :playlists %>
     </div>
   </div>
   <%= f.button :submit %>
-<% end %>
-<% if @errors %>
-  <% @errors.each do |error| %>
-    <p><%= error %></p>
-  <% end %>
 <% end %>
