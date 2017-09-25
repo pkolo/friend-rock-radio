@@ -7,4 +7,8 @@ class Track < ApplicationRecord
 
   validates :title, :year, presence: true
   validates :year, inclusion: 1900..(Time.now.year + 1)
+
+  accepts_nested_attributes_for :bands
+  accepts_nested_attributes_for :genres
+  accepts_nested_attributes_for :labels
 end
