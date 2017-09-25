@@ -3,7 +3,7 @@
   <%= playlist.time_marker %> -
   <%= playlist.track.title %> -
   <%= playlist.track.year %> -
-  <%= playlist.track.bands.join(', ') %> -
-  <%= playlist.track.genres.join(', ') %> -
-  <%= playlist.track.labels.join(', ') %>
+  <%= playlist.track.bands.pluck(:name).join(', ') %> -
+  <%= playlist.track.genres.pluck(:name).join(', ') %> -
+  <%= playlist.track.labels.pluck(:name).join(', ') %>
 <% end %>
