@@ -54,15 +54,18 @@ class EpisodesController < ApplicationController
                                     :_destroy,
                                     bands_attributes: [
                                       :id,
-                                      :name
+                                      :name,
+                                      :_destroy
                                     ],
                                     genres_attributes: [
                                       :id,
-                                      :name
+                                      :name,
+                                      :_destroy
                                     ],
                                     labels_attributes: [
                                       :id,
-                                      :name
+                                      :name,
+                                      :_destroy
                                     ]
                                  ]
                               ]
