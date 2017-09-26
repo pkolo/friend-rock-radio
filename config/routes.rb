@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root 'shows#index'
 
   resources :shows, only: [:index, :show] do
-    resources :episodes, only: [:index, :new, :create, :show, :edit]
+    resources :episodes, only: [:index, :new, :create, :show, :edit, :update]
   end
 end

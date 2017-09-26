@@ -1,13 +1,13 @@
 <div class="nested-fields">
-  <%= f.input :title %>
-  <%= f.input :year %>
+  <%= f.input :title, label: false, placeholder: 'track title' %>
+  <%= f.input :year, label: false, placeholder: 'track year' %>
 
   <div id="bands">
     <%= f.simple_fields_for :bands do |band| %>
       <%= render 'band_fields', f: band %>
     <% end %>
     <div class="links">
-      <%= link_to_add_association 'add band', f, :bands %>
+      <%= link_to_add_association '+ band', f, :bands %>
     </div>
   </div>
 
@@ -16,7 +16,7 @@
       <%= render 'label_fields', f: label %>
     <% end %>
     <div class="links">
-      <%= link_to_add_association 'add label', f, :labels %>
+      <%= link_to_add_association '+ label', f, :labels %>
     </div>
   </div>
 
@@ -25,9 +25,7 @@
       <%= render 'genre_fields', f: genre %>
     <% end %>
     <div class="links">
-      <%= link_to_add_association 'add genre', f, :genres %>
+      <%= link_to_add_association '+ genre', f, :genres %>
     </div>
   </div>
-
-  <%= link_to_remove_association "remove track", f %>
 </div>

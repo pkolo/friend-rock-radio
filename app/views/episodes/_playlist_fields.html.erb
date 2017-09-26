@@ -1,12 +1,9 @@
-<div class="nested-fields">
-  <%= f.input :time_marker %>
+<div class="form-inline nested-fields playlist-fields">
+  <%= link_to_remove_association "x", f %>
+  <%= f.input :time_marker, label: false, placeholder: 'time' %>
   <div id="track">
     <%= f.simple_fields_for :track do |track| %>
       <%= render 'track_fields', f: track %>
     <% end %>
-    <div class="links">
-      <%= link_to_add_association 'add track', f, :track %>
-    </div>
   </div>
-  <%= link_to_remove_association "remove playlist", f %>
 </div>
