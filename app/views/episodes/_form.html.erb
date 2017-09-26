@@ -5,7 +5,7 @@
       <%= render 'playlist_fields', f: playlist %>
     <% end %>
     <div class="links">
-      <%= link_to_add_association 'add playlist item', f, :playlists %>
+      <%= link_to_add_association 'add playlist item', f, :playlists, :wrap_object => Proc.new { |playlist| playlist.build_track; playlist } %>
     </div>
   </div>
   <%= f.button :submit %>
