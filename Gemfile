@@ -13,9 +13,9 @@ gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
-gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
@@ -32,6 +32,7 @@ gem 'geocoder'
 # Form helpers
 gem 'simple_form'
 gem 'cocoon'
+gem 'selectize-rails'
 
 group :development, :test do
   gem 'pry-rails'

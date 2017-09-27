@@ -1,8 +1,8 @@
 <div class="nested-fields">
-  <%= f.input :title, label: false, placeholder: 'track title' %>
+  <%= f.input :title, label: false, placeholder: 'track title', input_html: { class: 'track-title-input' } %>
   <%= f.input :year, label: false, placeholder: 'track year' %>
 
-  <div id="bands">
+  <div class="bands-form">
     <%= f.simple_fields_for :bands do |band| %>
       <%= render 'band_fields', f: band %>
     <% end %>
@@ -11,7 +11,7 @@
     </div>
   </div>
 
-  <div id="labels">
+  <div class="labels-form">
     <%= f.simple_fields_for :labels do |label| %>
       <%= render 'label_fields', f: label %>
     <% end %>
@@ -20,7 +20,7 @@
     </div>
   </div>
 
-  <div id="genres">
+  <div class="genres-form">
     <%= f.simple_fields_for :genres do |genre| %>
       <%= render 'genre_fields', f: genre %>
     <% end %>
@@ -28,4 +28,5 @@
       <%= link_to_add_association '+ genre', f, :genres %>
     </div>
   </div>
+
 </div>
