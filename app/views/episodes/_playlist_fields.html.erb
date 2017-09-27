@@ -2,9 +2,10 @@
   <%= link_to_remove_association "x", f %>
   <%= f.input :time_marker, label: false, placeholder: 'time' %>
   <%= f.input :track_id, collection: Track.all.pluck(:title, :id), input_html: { class: "selectize" }  %>
-  <div id="track">
+  <div class="track-form">
     <%= f.simple_fields_for :track do |track| %>
       <%= render 'track_fields', f: track %>
     <% end %>
   </div>
+  <button class='save-playlist'>save</button>
 </div>
