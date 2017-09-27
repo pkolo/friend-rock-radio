@@ -13,6 +13,19 @@ $(document).on('turbolinks:load', function() {
       create: function(input, callback) {
         $('.modal').show();
         $('.track-title-input').val(input);
+
+        $('#track-form').on('submit', function(e) {
+          e.preventDefault();
+          debugger
+          $.ajax({
+            method: "POST",
+            url: $(this).attr('action'),
+            data: $(this).serialize(),
+            success: function(response) {
+              console.log(response)
+            }
+          })
+        })
       }
     });
   })
