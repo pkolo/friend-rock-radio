@@ -14,7 +14,7 @@ class EpisodesController < ApplicationController
     @episode = Episode.new(episode_params)
     @episode.show = @show
     if @episode.save
-      redirect_to show_episode_path @show, @episode
+      redirect_to edit_show_episode_path @show, @episode
     else
       @errors = @episode.errors.full_messages
       render 'new'
@@ -46,6 +46,8 @@ class EpisodesController < ApplicationController
     def episode_params
       params.require(:episode)
             .permit(:title,
+                    :description,
+                    :published,
                     playlists_attributes: [
                       :time_marker, track_attributes: [
                                     :id,
