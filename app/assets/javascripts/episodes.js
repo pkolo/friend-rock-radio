@@ -1,4 +1,5 @@
-var selectizeCallback = null;
+var selectizeTrackCallback = null;
+var selectizeBandCallback = null;
 
 $(document).on('turbolinks:load', function() {
   // After clicking 'Add playlist item'
@@ -17,29 +18,50 @@ $(document).on('turbolinks:load', function() {
         data: $(this).serialize(),
         success: function(response) {
           console.log(response)
-          selectizeCallback({value: response.id, text: response.title});
-          selectizeCallback = null;
+          selectizeTrackCallback({value: response.id, text: response.title});
+          selectizeTrackCallback = null;
           $('.modal').remove();
         }
       })
     });
 
-    $('#playlists').on('click', '.close', function(e) {
-      $(this).parents('.modal')[0].style.display = 'none';
-      if (selectizeCallback != null) {
-        selectizeCallback();
-        selectizeCallback = null;
+    $(newPlaylist).on('click', '.close', function(e) {
+      $('.modal').hide();
+      if (selectizeTrackCallback != null) {
+        selectizeTrackCallback();
+        selectizeTrackCallback = null;
       }
     })
 
     $(newPlaylist).find('.selectize').selectize({
       create: function(input, callback) {
-        selectizeCallback = callback;
+        selectizeTrackCallback = callback;
 
         $('.modal').show();
         $('#new_track').trigger('reset');
         $('.track-title-input').val(input);
       }
     });
+
+    $(newPlaylist).find('.selectize-sm').selectize({
+      plugins: ['remove_button'],
+      delimiter: ',',
+      persist: false,
+      create: function(input, callback) {
+        data = `band[name]=${input}`
+        selectizeBandCallback = callback
+
+        $.ajax({
+          method: 'POST',
+          url: '/bands',
+          data: data,
+          success: function(response) {
+            console.log(response);
+            selectizeBandCallback({value: response.id, text: response.name});
+            selectizeBandCallback = null;
+          }
+        })
+      }
+    })
   })
 });

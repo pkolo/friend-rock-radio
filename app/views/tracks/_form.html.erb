@@ -5,6 +5,7 @@
     <%= f.input :title, label: false, placeholder: 'track title', input_html: { class: 'track-title-input' } %>
     <%= f.input :year, label: false, placeholder: 'track year' %>
 
+    <%= f.input :band_ids, collection: Band.all.pluck(:name, :id), label: false, placeholder: 'bands...', input_html: { class: "selectize-sm", multiple: true } %>
     <%= f.button :submit %>
   <% end %>
 </div>
