@@ -1,7 +1,11 @@
 class TracksController < ApplicationController
   def create
     @track = Track.new(track_params)
-    binding.pry
+    if @track.save
+      render json: @track, status: :created
+    else
+      render json: { errors: @track.errors.full_messages }
+    end
   end
 
   private

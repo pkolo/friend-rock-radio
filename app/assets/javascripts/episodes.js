@@ -14,9 +14,8 @@ $(document).on('turbolinks:load', function() {
         $('.modal').show();
         $('.track-title-input').val(input);
 
-        $('#track-form').on('submit', function(e) {
+        $('#new_track').on('submit', function(e) {
           e.preventDefault();
-          debugger
           $.ajax({
             method: "POST",
             url: $(this).attr('action'),
