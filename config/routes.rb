@@ -12,4 +12,6 @@ Rails.application.routes.draw do
 
   resources :tracks, only: [:create]
   resources :bands, only: [:create]
+  resources :labels, only: [:create]
+  resources :genres, only: [:create]
 end
