@@ -6,8 +6,15 @@ $(document).on('turbolinks:load', function() {
   $('#playlists').on('cocoon:after-insert', function(e, newPlaylist) {
 
     // Action to create new playlist item
-    $('.create-playlist-btn').on('click', function(e) {
+    $('#add_playlist').on('submit', function(e) {
       e.preventDefault();
+      var url = window.location.pathname
+      var episodePath = url.substring(url.indexOf('/episodes'), url.indexOf('/edit'))
+      debugger
+      // $.ajax({
+      //   method: 'POST',
+      //   url: `${episodePath}/playlists`
+      // })
     })
 
     // Action to create new track from modal form

@@ -1,6 +1,6 @@
 <%= render 'form' %>
 
-<%= simple_form_for [@show, @episode] do |f| %>
+<%= simple_form_for @episode, html: {id: 'add_playlist'} do |f| %>
   <div id="playlists">
     <%= f.simple_fields_for :playlists do |playlist| %>
       <%= render 'playlist_fields', f: playlist %>
