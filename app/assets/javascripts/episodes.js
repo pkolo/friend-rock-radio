@@ -43,25 +43,32 @@ $(document).on('turbolinks:load', function() {
       }
     });
 
-    $(newPlaylist).find('.selectize-sm').selectize({
-      plugins: ['remove_button'],
-      delimiter: ',',
-      persist: false,
-      create: function(input, callback) {
-        data = `band[name]=${input}`
-        selectizeBandCallback = callback
+    var selectizeFor = function(param) {
+      $(newPlaylist).find(`.selectize-${param}`).selectize({
+        plugins: ['remove_button'],
+        delimiter: ',',
+        persist: false,
+        create: function(input, callback) {
+          data = `${param}[name]=${input}`
+          selectizeBandCallback = callback
 
-        $.ajax({
-          method: 'POST',
-          url: '/bands',
-          data: data,
-          success: function(response) {
-            console.log(response);
-            selectizeBandCallback({value: response.id, text: response.name});
-            selectizeBandCallback = null;
-          }
-        })
-      }
-    })
+          $.ajax({
+            method: 'POST',
+            url: `/${param}s`,
+            data: data,
+            success: function(response) {
+              console.log(response);
+              selectizeBandCallback({value: response.id, text: response.name});
+              selectizeBandCallback = null;
+            }
+          })
+        }
+      })
+    }
+
+    selectizeFor("band");
+    selectizeFor("label");
+    selectizeFor("genre");
+
   })
 });
