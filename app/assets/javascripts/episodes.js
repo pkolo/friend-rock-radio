@@ -66,6 +66,8 @@ $(document).on('turbolinks:load', function() {
         plugins: ['remove_button'],
         delimiter: ',',
         persist: false,
+        closeAfterSelect: true,
+        openOnFocus: false,
         create: function(input, callback) {
           data = `${param}[name]=${input}`
           selectizeCallback = callback
