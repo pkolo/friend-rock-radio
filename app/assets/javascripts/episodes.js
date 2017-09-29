@@ -1,15 +1,16 @@
 var selectizeTrackCallback = null;
-var selectizeBandCallback = null;
+var selectizeCallback = null;
 
 $(document).on('turbolinks:load', function() {
   // After clicking 'Add playlist item'
   $('#playlists').on('cocoon:after-insert', function(e, newPlaylist) {
 
+    // Action to create new playlist item
     $('.create-playlist-btn').on('click', function(e) {
       e.preventDefault();
     })
 
-
+    // Action to create new track from modal form
     $('#new_track').on('submit', function(e) {
       e.preventDefault();
       $.ajax({
@@ -25,14 +26,30 @@ $(document).on('turbolinks:load', function() {
       })
     });
 
+    // Handles closing of modal / form cancellation
     $(newPlaylist).on('click', '.close', function(e) {
       $('.modal').hide();
+
+      // Triggers and resets callback functions so typing is re-enabled
       if (selectizeTrackCallback != null) {
         selectizeTrackCallback();
         selectizeTrackCallback = null;
       }
+
+      if (selectizeCallback != null) {
+        selectizeCallback();
+        selectizeCallback = null;
+      }
+
+      // Clears selectize fields
+      let selectFields = $('select')
+      $.each( selectFields, function(i, value) {
+          let selectField = value.selectize;
+          selectField.clear();
+        })
     })
 
+    // Adds selectize / track creation to track select field
     $(newPlaylist).find('.selectize').selectize({
       create: function(input, callback) {
         selectizeTrackCallback = callback;
@@ -43,6 +60,7 @@ $(document).on('turbolinks:load', function() {
       }
     });
 
+    // Adds selectize and creation for bands, genres, labels
     var selectizeFor = function(param) {
       $(newPlaylist).find(`.selectize-${param}`).selectize({
         plugins: ['remove_button'],
@@ -50,7 +68,7 @@ $(document).on('turbolinks:load', function() {
         persist: false,
         create: function(input, callback) {
           data = `${param}[name]=${input}`
-          selectizeBandCallback = callback
+          selectizeCallback = callback
 
           $.ajax({
             method: 'POST',
@@ -58,8 +76,8 @@ $(document).on('turbolinks:load', function() {
             data: data,
             success: function(response) {
               console.log(response);
-              selectizeBandCallback({value: response.id, text: response.name});
-              selectizeBandCallback = null;
+              selectizeCallback({value: response.id, text: response.name});
+              selectizeCallback = null;
             }
           })
         }
