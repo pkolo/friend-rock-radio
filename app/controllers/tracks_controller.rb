@@ -1,6 +1,5 @@
 class TracksController < ApplicationController
   def create
-    binding.pry
     @track = Track.new(track_params)
     if @track.save
       render json: @track, status: :created
