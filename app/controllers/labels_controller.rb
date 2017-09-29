@@ -7,4 +7,10 @@ class LabelsController < ApplicationController
       render json: { errors: @label.errors.full_messages }, status: :unprocessable_entity
     end
   end
+
+  private
+
+    def label_params
+      params.require(:label).permit(:name)
+    end
 end

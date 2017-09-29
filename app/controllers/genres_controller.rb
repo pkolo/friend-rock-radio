@@ -7,4 +7,10 @@ class GenresController < ApplicationController
       render json: { errors: @genre.errors.full_messages }, status: :unprocessable_entity
     end
   end
+
+  private
+
+    def genre_params
+      params.require(:genre).permit(:name)
+    end
 end

@@ -5,7 +5,9 @@
     <%= f.input :title, label: false, placeholder: 'track title', input_html: { class: 'track-title-input' } %>
     <%= f.input :year, label: false, placeholder: 'track year' %>
 
-    <%= f.input :band_ids, collection: Band.all.pluck(:name, :id), label: false, placeholder: 'bands...', input_html: { class: "selectize-sm", multiple: true } %>
+    <%= f.input :band_ids, collection: Band.all.pluck(:name, :id), label: false, placeholder: 'bands...', input_html: { class: "selectize-band", multiple: true } %>
+    <%= f.input :label_ids, collection: Label.all.pluck(:name, :id), label: false, placeholder: 'labels...', input_html: { class: "selectize-label", multiple: true } %>
+    <%= f.input :genre_ids, collection: Genre.all.pluck(:name, :id), label: false, placeholder: 'genres...', input_html: { class: "selectize-genre", multiple: true } %>
     <%= f.button :submit %>
   <% end %>
 </div>
