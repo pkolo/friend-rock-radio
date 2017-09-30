@@ -5,4 +5,13 @@ Rails.application.routes.draw do
   resources :shows, only: [:index, :show] do
     resources :episodes, only: [:index, :new, :create, :show, :edit, :update]
   end
+
+  resources :episodes, only: [:show] do
+    resources :playlists, only: [:new, :create]
+  end
+
+  resources :tracks, only: [:create]
+  resources :bands, only: [:create]
+  resources :labels, only: [:create]
+  resources :genres, only: [:create]
 end

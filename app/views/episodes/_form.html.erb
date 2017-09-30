@@ -1,12 +1,5 @@
 <%= simple_form_for [@show, @episode] do |f| %>
-  <%= f.input :title, label: 'Episode Title' %>
-  <div id="playlists">
-    <%= f.simple_fields_for :playlists do |playlist| %>
-      <%= render 'playlist_fields', f: playlist %>
-    <% end %>
-    <div class="links">
-      <%= link_to_add_association 'add playlist item', f, :playlists, :wrap_object => Proc.new { |playlist| playlist.build_track; playlist }, class: 'form-add-link' %>
-    </div>
-  </div>
+  <%= f.input :title, label: false, placeholder: 'title' %>
+  <%= f.input :description, label: false, placeholder: 'description' %>
   <%= f.button :submit %>
 <% end %>
