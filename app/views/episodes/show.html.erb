@@ -1,9 +1,4 @@
 <h3><%= @episode.title %></h3>
-<% @episode.playlists.each do |playlist| %>
-  <%= playlist.time_marker %> -
-  <%= playlist.track.title %> -
-  <%= playlist.track.year %> -
-  <%= playlist.track.bands.pluck(:name).join(', ') %> -
-  <%= playlist.track.genres.pluck(:name).join(', ') %> -
-  <%= playlist.track.labels.pluck(:name).join(', ') %>
-<% end %>
+<div class="playlist">
+  <%= render partial: "playlist", collection: @playlists %>
+</div>
