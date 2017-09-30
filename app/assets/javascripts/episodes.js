@@ -3,18 +3,21 @@ var selectizeCallback = null;
 
 $(document).on('turbolinks:load', function() {
   // After clicking 'Add playlist item'
-  $('#playlists').on('cocoon:after-insert', function(e, newPlaylist) {
+  $('.edit-playlist-section').on('cocoon:after-insert', function(e, newPlaylist) {
 
     // Action to create new playlist item
     $('#add_playlist').on('submit', function(e) {
       e.preventDefault();
       var url = window.location.pathname
       var episodePath = url.substring(url.indexOf('/episodes'), url.indexOf('/edit'))
-      debugger
-      // $.ajax({
-      //   method: 'POST',
-      //   url: `${episodePath}/playlists`
-      // })
+      
+      $.ajax({
+        method: 'POST',
+        url: `${episodePath}/playlists`,
+        data: $(this).serialize()
+      }).done(response => {
+        console.log(response)
+      })
     })
 
     // Action to create new track from modal form

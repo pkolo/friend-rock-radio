@@ -1,12 +1,14 @@
 <%= render 'form' %>
 
-<%= simple_form_for @episode, html: {id: 'add_playlist'} do |f| %>
-  <div id="playlists">
-    <%= f.simple_fields_for :playlists do |playlist| %>
-      <%= render 'playlist_fields', f: playlist %>
-    <% end %>
-    <div class="links">
-      <%= link_to_add_association 'add playlist item', f, :playlists, :wrap_object => Proc.new { |playlist| playlist.build_track; playlist }, class: 'form-add-link' %>
+<div class='edit-playlist-section'>
+  <%= simple_form_for @episode, html: {id: 'add_playlist', method: 'POST'} do |f| %>
+    <div class="new-playlist-item">
+      <%= f.simple_fields_for :playlists do |playlist| %>
+        <%= render 'playlist_fields', f: playlist %>
+      <% end %>
+      <div class="links">
+        <%= link_to_add_association 'add playlist item', f, :playlists, :wrap_object => Proc.new { |playlist| playlist.build_track; playlist }, class: 'form-add-link' %>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
