@@ -1,3 +1,12 @@
 <div class='playlist-item'>
-  <%= playlist.time_marker %> - <%= playlist.track.bands.map(&:name).join(', ') %> - <%= playlist.track.title %>
+  <div class="playlist-time">
+    <%= playlist.pretty_time %>
+  </div>
+  <div class="track-info">
+    <div class="track-basic"><%= playlist.track.bands.map(&:name).join(', ') %> - <%= playlist.track.title %></div>
+    <div class="track-extended">
+      <%= playlist.track.year %> |
+      <%= playlist.track.labels.map(&:name).join(', ') %> |
+      <%= playlist.track.genres.map(&:name).join(', ') %></div>
+  </div>
 </div>
