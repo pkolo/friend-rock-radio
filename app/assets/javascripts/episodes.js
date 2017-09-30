@@ -12,14 +12,15 @@ $(document).on('turbolinks:load', function() {
       url: `${episodePath}/playlists/new`
     }).done(function(res) {
       $('.edit-playlist-section').prepend(res)
-      let newPlaylist = $('#new_playlist')
+      let newPlaylist = $('.new-playlist-item')
 
       // Action to create new playlist item
-      $('.create-playlist-btn').on('click', function(e) {
+      $('#new_playlist').on('submit', function(e) {
+        e.preventDefault();
         $.ajax({
           method: 'POST',
           url: `${episodePath}/playlists`,
-          data: newPlaylist.serialize()
+          data: $(this).serialize()
         }).done(response => {
           console.log(response)
         })

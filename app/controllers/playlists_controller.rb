@@ -7,7 +7,6 @@ class PlaylistsController < ApplicationController
   end
 
   def create
-    binding.pry
     @episode = Episode.find(params[:episode_id])
     @playlist = Playlist.new(playlist_params)
     @playlist.episode = @episode
