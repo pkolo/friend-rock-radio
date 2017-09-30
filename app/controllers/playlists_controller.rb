@@ -11,7 +11,7 @@ class PlaylistsController < ApplicationController
     @playlist = Playlist.new(playlist_params)
     @playlist.episode = @episode
     if @playlist.save
-      render json: @playlist, status: :created
+      render partial: 'episodes/playlist', layout: false, locals: {playlist: @playlist}
     else
       render json: { errors: @playlist.errors.full_messages }, status: :unprocessable_entity
     end
