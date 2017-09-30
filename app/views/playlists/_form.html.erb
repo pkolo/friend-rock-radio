@@ -1,0 +1,7 @@
+<%= simple_form_for [@episode, @playlist], authenticity_token: true do |f| %>
+  <%= f.input :time_marker, label: false, placeholder: 'time' %>
+  <%= f.input :track_id, collection: Track.all.pluck(:title, :id), input_html: { class: "selectize" }  %>
+  <%= render 'tracks/form' %>
+
+  <%= f.button :submit, class: 'create-playlist-btn' %>
+<% end %>

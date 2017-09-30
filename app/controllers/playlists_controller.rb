@@ -1,4 +1,11 @@
 class PlaylistsController < ApplicationController
+
+  def new
+    @episode = Episode.find(params[:episode_id])
+    @playlist = Playlist.new
+    render 'new', layout: false
+  end
+
   def create
     @episode = Episode.find(params[:episode_id])
     @playlist = Playlist.new(playlist_params)

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
   resources :episodes, only: [:show] do
-    resources :playlists, only: [:create]
+    resources :playlists, only: [:new, :create]
   end
 
   resources :tracks, only: [:create]
