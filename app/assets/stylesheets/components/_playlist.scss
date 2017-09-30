@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 13fr;
   grid-template-rows: 1fr;
+  margin-bottom: 10px;
 }
 
 .track-info {
@@ -10,6 +11,10 @@
   grid-template-rows: 1fr 1fr;
 }
 
+.track-basic {
+  font-size: $text-lg;
+}
+
 .playlist-time {
-  width: 75px;
+  font-size: $text-lg;
 }

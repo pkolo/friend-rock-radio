@@ -1,4 +1,10 @@
-<h3><%= @episode.title %></h3>
-<div class="playlist">
-  <%= render partial: "playlist", collection: @playlists %>
+<div class="sidebar-container">
+  <p>Sidebar...</p>
+</div>
+
+<div class="content-container">
+  <div class="episode-header"><%= @episode.show.name %> >> <%= @episode.title %></div>
+  <div class="playlist">
+    <%= render partial: "playlist", collection: @playlists %>
+  </div>
 </div>
