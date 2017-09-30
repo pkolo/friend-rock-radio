@@ -1,5 +1,5 @@
 <div class="modal">
-  <%= simple_form_for Track.new, authenticity_token: true do |f| %>
+  <%= simple_form_for Track.new do |f| %>
     <h4>Create a new track...</h4>
     <span class="close">&times;</span>
     <%= f.input :title, label: false, placeholder: 'track title', input_html: { class: 'track-title-input' } %>
