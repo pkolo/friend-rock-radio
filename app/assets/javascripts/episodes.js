@@ -22,7 +22,7 @@ $(document).on('turbolinks:load', function() {
           url: `${episodePath}/playlists`,
           data: $(this).serialize()
         }).done(response => {
-          $(this).remove()
+          $('.new-playlist-item').remove()
           $('.playlist').append(response)
         })
       })
