@@ -1,25 +1,31 @@
-.playlist-item {
+.playlist {
   display: grid;
-  grid-template-columns: 1fr 13fr;
-  grid-template-rows: 1fr;
-  margin-bottom: 10px;
-}
+  grid-auto-rows: auto;
 
-.track-info {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
-}
+  .playlist-item {
+    display: grid;
+    grid-template-columns: 1fr 13fr;
+    margin-bottom: 5px;
+  }
 
-.track-basic {
-  font-size: $text-md;
-}
+  .track-info {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+  }
 
-.track-extended {
-  color: rgb(150, 150, 150);
-  font-size: .85em;
-}
+  .track-basic {
+    font-size: $text-md;
+  }
 
-.playlist-time {
-  font-size: $text-md;
+  .track-extended {
+    display: inline;
+    color: rgb(150, 150, 150);
+    font-size: .85em;
+  }
+
+  .playlist-time {
+    font-size: $text-md;
+  }
+
 }

@@ -4,8 +4,9 @@
 
 header {
   height: 100px;
-  margin: 20px 0 40px 0;
-  border: 1px solid $text-color;
+  margin-bottom: 40px;
+  background-color: $text-color;
+  color: #fff;
 
   .site-name {
     padding: 20px;
