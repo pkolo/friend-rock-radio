@@ -12,9 +12,14 @@
 }
 
 .track-basic {
-  font-size: $text-lg;
+  font-size: $text-md;
+}
+
+.track-extended {
+  color: rgb(150, 150, 150);
+  font-size: .85em;
 }
 
 .playlist-time {
-  font-size: $text-lg;
+  font-size: $text-md;
 }

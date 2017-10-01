@@ -3,8 +3,13 @@
 // -----------------------------------------------------------------------------
 
 header {
+  height: 100px;
+  margin: 20px 0 40px 0;
+  border: 1px solid $text-color;
+
   .site-name {
+    padding: 20px;
     font-size: 52px;
-    margin-bottom: 35px;
+    text-transform: uppercase;
   }
 }

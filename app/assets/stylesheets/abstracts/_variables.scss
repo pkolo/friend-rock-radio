@@ -9,6 +9,7 @@ $text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvet
 /// Text sizing
 $text-xl: 1.5em;
 $text-lg: 1.25em;
+$text-md: 1.15em;
 
 /// Copy text color
 /// @type Color
@@ -20,4 +21,4 @@ $red: rgb(200, 0, 80) !default;
 
 /// Container's maximum width
 /// @type Length
-$max-width: 1180px !default;
+$max-width: 1000px !default;
