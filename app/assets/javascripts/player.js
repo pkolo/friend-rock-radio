@@ -1,5 +1,5 @@
 $('audio').mediaelementplayer({
-  alwaysShowControls: true,
+  pluginPath: '/build',
 	success: function(player, node) {
 		console.log('works')
 	}

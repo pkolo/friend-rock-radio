@@ -29,7 +29,7 @@ module FriendRockRadio
     config.generators.system_tests = nil
 
     # Adds vendor assets to pipeline
-    config.assets.paths << Rails.root.join('vendor', 'assets')
+    # config.assets.paths << Rails.root.join('vendor', 'assets')
 
   end
 end
