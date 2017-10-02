@@ -24,11 +24,13 @@ class EpisodesController < ApplicationController
   def show
     @show = Show.find(params[:show_id])
     @episode = Episode.find(params[:id])
+    @playlists = @episode.playlists.order(:time_marker)
   end
 
   def edit
     @show = Show.find(params[:show_id])
     @episode = Episode.find(params[:id])
+    @playlists = @episode.playlists.order(:time_marker)
   end
 
   def update

@@ -6,9 +6,14 @@
 /// @type List
 $text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
 
+/// Text sizing
+$text-xl: 1.5em;
+$text-lg: 1.25em;
+$text-md: 1.15em;
+
 /// Copy text color
 /// @type Color
-$text-color: rgb(200, 200, 200) !default;
+$text-color: rgb(100, 100, 100) !default;
 
 /// Main brand color
 /// @type Color
@@ -16,4 +21,4 @@ $red: rgb(200, 0, 80) !default;
 
 /// Container's maximum width
 /// @type Length
-$max-width: 1180px !default;
+$max-width: 1000px !default;

@@ -11,7 +11,7 @@ $(document).on('turbolinks:load', function() {
     $.ajax({
       url: `${episodePath}/playlists/new`
     }).done(function(res) {
-      $('.edit-playlist-section').prepend(res)
+      $('.playlist').append(res)
       let newPlaylist = $('.new-playlist-item')
 
       // Action to create new playlist item
@@ -22,7 +22,8 @@ $(document).on('turbolinks:load', function() {
           url: `${episodePath}/playlists`,
           data: $(this).serialize()
         }).done(response => {
-          console.log(response)
+          $('.new-playlist-item').remove()
+          $('.playlist').append(response)
         })
       })
 

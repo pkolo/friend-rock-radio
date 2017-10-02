@@ -3,7 +3,14 @@
 // -----------------------------------------------------------------------------
 
 header {
-  h1 {
+  height: 100px;
+  margin-bottom: 40px;
+  background-color: $text-color;
+  color: #fff;
+
+  .site-name {
+    padding: 20px;
     font-size: 52px;
+    text-transform: uppercase;
   }
 }

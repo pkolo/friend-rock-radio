@@ -1,0 +1,31 @@
+.playlist {
+  display: grid;
+  grid-auto-rows: auto;
+
+  .playlist-item {
+    display: grid;
+    grid-template-columns: 1fr 13fr;
+    margin-bottom: 5px;
+  }
+
+  .track-info {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .track-basic {
+    font-size: $text-md;
+  }
+
+  .track-extended {
+    display: inline;
+    color: rgb(150, 150, 150);
+    font-size: .85em;
+  }
+
+  .playlist-time {
+    font-size: $text-md;
+  }
+
+}
