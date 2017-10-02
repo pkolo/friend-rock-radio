@@ -1,8 +1,8 @@
-$('audio').mediaelementplayer({
-  pluginPath: '/build',
-	success: function(player, node) {
-		console.log('works')
-	}
-});
+$(document).ready(function() {
 
-console.log('no')
+  $('audio').mediaelementplayer({
+  	success: function(player, node) {
+  		
+  	}
+  });
+})
