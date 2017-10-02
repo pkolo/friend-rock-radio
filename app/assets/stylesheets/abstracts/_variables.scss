@@ -11,9 +11,14 @@ $text-xl: 1.5em;
 $text-lg: 1.25em;
 $text-md: 1.15em;
 
+/// Colors
+$dark-grey: rgb(75, 75, 75);
+$mid-grey: rgb(150, 150, 150);
+$light-grey: rgb(225, 225, 225);
+
 /// Copy text color
 /// @type Color
-$text-color: rgb(100, 100, 100) !default;
+$text-color: $dark-grey !default;
 
 /// Main brand color
 /// @type Color
@@ -22,3 +27,7 @@ $red: rgb(200, 0, 80) !default;
 /// Container's maximum width
 /// @type Length
 $max-width: 1000px !default;
+
+
+/// Media Element
+$player: 'mejs_'
