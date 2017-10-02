@@ -1,7 +1,5 @@
 <div class='playlist-item'>
-  <div class="playlist-time">
-    <%= playlist.pretty_time %>
-  </div>
+  <a href="#<%= playlist.time_marker %>" class="playlist-time"><%= playlist.pretty_time %></a>
   <div class="track-info">
     <div class="track-basic"><%= playlist.track.bands.map(&:name).join(', ') %> - <%= playlist.track.title %></div>
     <div class="track-extended">

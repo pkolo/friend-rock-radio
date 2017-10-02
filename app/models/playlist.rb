@@ -8,6 +8,8 @@ class Playlist < ApplicationRecord
   accepts_nested_attributes_for :track
 
   def pretty_time
-    Time.at(time_marker).utc.strftime("%M:%S")
+    seconds = time_marker % 60
+    minutes = (time_marker - seconds) / 60
+    "#{minutes.to_s.rjust(2, '0')}:#{seconds.to_s.rjust(2, '0')}"
   end
 end
