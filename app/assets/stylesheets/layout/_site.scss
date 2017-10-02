@@ -1,10 +1,15 @@
+body {
+  margin: 0;
+}
+
 .site-wrapper {
-  max-width: $max-width; /* 1 */
+  max-width: 100%; /* 1 */
   margin-left: auto; /* 2 */
   margin-right: auto; /* 2 */
-  border: 1px solid rgb(200, 200, 200);
  }
 
  .main-container {
-
+   max-width: $max-width; /* 1 */
+   margin-left: auto; /* 2 */
+   margin-right: auto; /* 2 */
  }
