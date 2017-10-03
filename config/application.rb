@@ -27,5 +27,9 @@ module FriendRockRadio
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Adds vendor assets to pipeline
+    # config.assets.paths << Rails.root.join('vendor', 'assets')
+
   end
 end

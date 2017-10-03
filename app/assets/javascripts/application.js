@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require cocoon
 //= require selectize
+//= require mediaelement_rails
 //= require_tree .

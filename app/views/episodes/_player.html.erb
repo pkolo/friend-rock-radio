@@ -1,0 +1,19 @@
+<div class="audio-player">
+  <div class="player-header">
+    <div class="show-name">
+      <%= @episode.show.name %>
+    </div>
+    <div class="episode-title">
+      <%= @episode.title %>
+    </div>
+    <div class="episode-description">
+      <%= @episode.description %>
+    </div>
+    <div class="current-track">
+      Now Playing: <div class="track-title"></div>
+    </div>
+  </div>
+  <audio controls style="width: 100%">
+    <source src="/media/MusicDigest070916.mp3" type="audio/mpeg">
+  </audio>
+</div>

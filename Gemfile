@@ -34,6 +34,9 @@ gem 'simple_form'
 gem 'cocoon'
 gem 'selectize-rails'
 
+# Media player
+gem "mediaelement_rails", git: 'https://github.com/pkolo/mediaelement_rails.git'
+
 group :development, :test do
   gem 'pry-rails'
 end
