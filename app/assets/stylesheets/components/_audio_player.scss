@@ -7,6 +7,9 @@
   }
 
   .player-header {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-gap: 10px;
     padding: 20px;
     background: linear-gradient($pink, $yellow);
     color: $dark-grey;
@@ -21,6 +24,10 @@
 
     .episode-description {
       font-size: .85em;
+    }
+
+    .current-track {
+      text-align: center;
     }
   }
 
