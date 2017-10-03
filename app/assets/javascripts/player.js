@@ -3,7 +3,7 @@ $(document).ready(function() {
   class Playlist {
     constructor(playlistItems) {
       this.tracks = this.setTracks(playlistItems);
-      this.currentTrack = this.getTrackData(playlistItems[0]).title;
+      this.currentTrack = this.getTrackData(playlistItems[0])
     }
 
     getTrackData(playlistItem) {
@@ -31,7 +31,7 @@ $(document).ready(function() {
         }
       })
       if (newCurrentTrack !== this.currentTrack) {
-        this.currentTrack = newCurrentTrack.title
+        this.currentTrack = newCurrentTrack
       }
     }
   }
@@ -40,6 +40,7 @@ $(document).ready(function() {
   	success: function(player, node) {
       let playlistItems = $('.playlist-item')
       let playlist = new Playlist(playlistItems);
+      $('.track-title').text(playlist.currentTrack.title)
 
   		$('.content-container').on('click', '.playlist-time', function(e) {
         e.preventDefault();
@@ -51,6 +52,10 @@ $(document).ready(function() {
       $(player).on('timeupdate', function() {
         let currentTime = this.getCurrentTime()
         playlist.setCurrentTrack(currentTime)
+        let currentTrack = $('.track-title').text()
+        if (playlist.currentTrack.title !== currentTrack) {
+          $('.track-title').text(playlist.currentTrack.title)
+        }
       })
   	}
   });
