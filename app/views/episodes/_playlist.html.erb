@@ -4,7 +4,10 @@
   </div>
   <% if playlist.track %>
     <div class="track-info">
-      <div class="track-basic"><%= playlist.track.bands.map(&:name).join(', ') %> - <%= playlist.track.title %></div>
+      <div class="track-basic">
+        <%= playlist.track.bands.map(&:name).join(', ') %> -
+        <%= playlist.track.title %>
+      </div>
       <div class="track-extended">
         <%= playlist.track.year %> |
         <%= playlist.track.labels.map(&:name).join(', ') %> |

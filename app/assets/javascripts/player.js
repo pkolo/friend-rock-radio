@@ -42,9 +42,10 @@ $(document).ready(function() {
       let playlist = new Playlist(playlistItems);
       $('.track-title').text(playlist.currentTrack.title)
 
-  		$('.content-container').on('click', '.playlist-time', function(e) {
+  		$('.content-container').on('click', '.playlist-item', function(e) {
         e.preventDefault();
-        var newCurrentTime = $(this).data().trackTime
+
+        var newCurrentTime = $(this).find('.playlist-time').data().trackTime
         player.setCurrentTime(newCurrentTime);
         playlist.setCurrentTrack(newCurrentTime)
       })
