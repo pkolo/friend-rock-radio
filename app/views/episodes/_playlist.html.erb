@@ -2,12 +2,16 @@
   <div data-track-time="<%= playlist.time_marker %>" class="playlist-time">
     <%= playlist.pretty_time %>
   </div>
-  <div class="track-info">
-    <div class="track-basic"><%= playlist.track.bands.map(&:name).join(', ') %> - <%= playlist.track.title %></div>
-    <div class="track-extended">
-      <%= playlist.track.year %> |
-      <%= playlist.track.labels.map(&:name).join(', ') %> |
-      <%= playlist.track.genres.map(&:name).join(', ') %>
+  <% if playlist.track %>
+    <div class="track-info">
+      <div class="track-basic"><%= playlist.track.bands.map(&:name).join(', ') %> - <%= playlist.track.title %></div>
+      <div class="track-extended">
+        <%= playlist.track.year %> |
+        <%= playlist.track.labels.map(&:name).join(', ') %> |
+        <%= playlist.track.genres.map(&:name).join(', ') %>
+      </div>
     </div>
-  </div>
+  <% else %>
+    <div class="track-basic"><%= playlist.title %></div>
+  <% end %>
 </div>
