@@ -3,14 +3,15 @@
 // -----------------------------------------------------------------------------
 
 header {
-  height: 100px;
-  margin-bottom: 40px;
-  background-color: $text-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 75px;
+  padding-bottom: 60px;
+  background-color: $pink;
   color: #fff;
 
-  .site-name {
-    padding: 20px;
-    font-size: 52px;
-    text-transform: uppercase;
+  .logo {
+    margin: 0px auto;
   }
 }

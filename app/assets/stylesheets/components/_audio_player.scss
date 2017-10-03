@@ -3,16 +3,28 @@
   grid-template-rows: 5fr 1fr;
 
   .#{$player}_container {
-    background: $light-grey;
+    background: $yellow;
+  }
+
+  .#{$player}_controls {
+    background: transparent;
+  }
+
+  .#{$player}_time {
+    color: $dark-grey;
   }
 
   .player-header {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-gap: 10px;
     padding: 20px;
     background: linear-gradient($pink, $yellow);
     color: $dark-grey;
 
     .show-name {
-      font-size: 3.5rem;
+      font-size: 3.25rem;
+      font-weight: 800;
     }
 
     .episode-title {
@@ -21,6 +33,10 @@
 
     .episode-description {
       font-size: .85em;
+    }
+
+    .current-track {
+      text-align: center;
     }
   }
 

@@ -2,9 +2,11 @@
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 
+
 /// Regular font family
 /// @type List
-$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+@import url('https://fonts.googleapis.com/css?family=Cutive+Mono');
+$text-font-stack: 'Cutive Mono', sans-serif !default;
 
 /// Text sizing
 $text-xl: 1.5em;
@@ -14,7 +16,7 @@ $text-md: 1.15em;
 /// Colors
 $dark-grey: #444;
 $mid-grey: #aaa;
-$light-grey: #d1d1d1;
+$light-grey: #eee;
 
 $pink: #F6CECE;
 $yellow: #F3F781;

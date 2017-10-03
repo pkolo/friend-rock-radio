@@ -1,31 +1,43 @@
 .playlist {
   display: grid;
   grid-auto-rows: auto;
+  padding: 20px;
+
 
   .playlist-item {
     display: grid;
-    grid-template-columns: 1fr 13fr;
-    margin-bottom: 5px;
+    grid-template-columns: 1fr 15fr;
+    grid-gap: 20px;
+    font-size: $text-md;
+    &:nth-child(2n-1) {
+      background: $light-grey;
+    }
+    &:hover {
+      background-color: $pink;
+      cursor: pointer;
+    }
   }
 
   .track-info {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr;
+    grid-auto-flow: column;
+    grid-gap: 20px;
   }
 
   .track-basic {
-    font-size: $text-md;
   }
 
   .track-extended {
-    display: inline;
+    text-align: right;
     color: rgb(150, 150, 150);
-    font-size: .85em;
+    font-size: .75em;
   }
 
   .playlist-time {
-    font-size: $text-md;
+
+  }
+
+  .playlist-title {
   }
 
 }
