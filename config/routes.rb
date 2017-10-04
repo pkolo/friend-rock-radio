@@ -12,11 +12,11 @@ Rails.application.routes.draw do
     post '/login', to: 'sessions#create'
     get '/logout', to: 'sessions#destroy'
 
-    resources :shows, only: [:show] do
-      resources :episodes, only: [:index, :new, :create, :edit, :update]
+    resources :shows, only: [:edit] do
+      resources :episodes, only: [:new, :create, :edit, :update]
     end
 
-    resources :episodes, only: [:show] do
+    resources :episodes, only: [:edit] do
       resources :playlists, only: [:new, :create]
     end
 
