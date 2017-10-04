@@ -6,10 +6,11 @@ $(document).on('turbolinks:load', function() {
   $('.edit-playlist-section').on('click', '.add-playlist-item-btn', function(e) {
     var url = window.location.pathname
     var episodePath = url.substring(url.indexOf('/episodes'), url.indexOf('/edit'))
+    var adminEpisodePath = `/admin${episodePath}`
 
     // Get new playlist form and insert it
     $.ajax({
-      url: `${episodePath}/playlists/new`
+      url: `${adminEpisodePath}/playlists/new`
     }).done(function(res) {
       $('.playlist').append(res)
       let newPlaylist = $('.new-playlist-item')
@@ -19,7 +20,7 @@ $(document).on('turbolinks:load', function() {
         e.preventDefault();
         $.ajax({
           method: 'POST',
-          url: `${episodePath}/playlists`,
+          url: `${adminEpisodePath}/playlists`,
           data: $(this).serialize()
         }).done(response => {
           $('.new-playlist-item').remove()
@@ -91,7 +92,7 @@ $(document).on('turbolinks:load', function() {
 
             $.ajax({
               method: 'POST',
-              url: `/${param}s`,
+              url: `/admin/${param}s`,
               data: data,
               success: function(response) {
                 console.log(response);

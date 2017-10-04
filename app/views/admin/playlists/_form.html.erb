@@ -1,10 +1,10 @@
 <div class='new-playlist-item'>
-  <%= simple_form_for [@episode, @playlist] do |f| %>
+  <%= simple_form_for [@episode, @playlist], url: admin_episode_playlists_path do |f| %>
     <%= f.input :time_marker, label: false, placeholder: 'time' %>
     <%= f.input :title, label: false, placeholder: "title" %>
     <%= f.input :track_id, collection: Track.all.pluck(:title, :id), input_html: { class: "selectize" }  %>
 
     <%= f.button :submit, class: 'create-playlist-btn' %>
   <% end %>
-  <%= render 'tracks/form' %>
+  <%= render 'admin/tracks/form' %>
 </div>
