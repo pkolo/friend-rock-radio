@@ -4,6 +4,20 @@
   border: 1px solid #444;
 }
 
-input .small {
-  width: 10%;
+.input, textarea {
+  margin-bottom: 10px;
+}
+
+.input-large {
+  width: 95%;
+  height: 25px;
+  padding: 10px;
+  font-size: 1.5em;
+}
+
+.textarea-large {
+  width: 95%;
+  height: 125px;
+  font-size: 1.25em;
+  padding: 10px;
 }

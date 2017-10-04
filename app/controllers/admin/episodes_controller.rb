@@ -14,7 +14,7 @@ class Admin::EpisodesController < Admin::AdminController
     @episode = Episode.new(episode_params)
     @episode.show = @show
     if @episode.save
-      redirect_to edit_show_episode_path @show, @episode
+      redirect_to edit_admin_show_episode_path @show, @episode
     else
       @errors = @episode.errors.full_messages
       render 'new'
