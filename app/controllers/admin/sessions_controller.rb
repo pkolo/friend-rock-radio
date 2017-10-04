@@ -1,4 +1,4 @@
-class Admin::SessionsController < ApplicationController
+class Admin::SessionsController < Admin::AdminController
   include Admin::SessionsHelper
 
   def new

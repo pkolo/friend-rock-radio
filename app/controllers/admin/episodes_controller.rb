@@ -1,4 +1,4 @@
-class Admin::EpisodesController < ApplicationController
+class Admin::EpisodesController < Admin::AdminController
   def index
     @show = Show.find(params[:show_id])
     @episodes = @show.episodes.all

@@ -1,4 +1,4 @@
-class Admin::DashboardController < ApplicationController
+class Admin::DashboardController < Admin::AdminController
   include Admin::SessionsHelper
   before_action :require_login
 

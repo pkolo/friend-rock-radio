@@ -1,4 +1,4 @@
-class Admin::BandsController < ApplicationController
+class Admin::BandsController < Admin::AdminController
   def create
     @band = Band.new(band_params)
     if @band.save

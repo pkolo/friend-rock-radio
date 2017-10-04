@@ -1,21 +1,16 @@
-<div class="main-container">
-  <div class="admin-container">
-
-    <div class="sidebar-container">
-      <div class="widget-container">
-        <div class="widget-header">
-          Your Shows:
-        </div>
-        <ul>
-          <% @shows.each do |show| %>
-            <li><%= show.name %> (edit)</li>
-          <% end %>
-        </ul>
+  <div class="sidebar-container">
+    <div class="widget-container">
+      <div class="widget-header">
+        Your Shows:
       </div>
-    </div>
-
-    <div class="content-container">
-      More text here.
+      <ul>
+        <% @shows.each do |show| %>
+          <li><%= show.name %> (edit)</li>
+        <% end %>
+      </ul>
     </div>
   </div>
-</div>
+
+  <div class="content-container">
+    More text here.
+  </div>
