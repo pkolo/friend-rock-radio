@@ -1,0 +1,10 @@
+.admin-container {
+  margin-top: 20px;
+  border: 1px solid $dark-grey;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  .content-container {
+    padding: 20px;
+  }
+}

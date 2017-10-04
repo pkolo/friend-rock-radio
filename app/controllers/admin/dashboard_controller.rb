@@ -4,7 +4,7 @@ class Admin::DashboardController < ApplicationController
 
   def index
     @user = current_user
-    binding.pry
+    @shows = @user.shows
   end
 
   private
