@@ -3,22 +3,26 @@ Rails.application.routes.draw do
   root 'shows#index'
 
   resources :shows, only: [:index, :show] do
-    resources :episodes, only: [:index, :new, :create, :show, :edit, :update]
+    resources :episodes, only: [:index, :show]
   end
-
-  resources :episodes, only: [:show] do
-    resources :playlists, only: [:new, :create]
-  end
-
-  resources :tracks, only: [:create]
-  resources :bands, only: [:create]
-  resources :labels, only: [:create]
-  resources :genres, only: [:create]
 
   namespace :admin do
     get '', to: 'dashboard#index', as: '/'
     get '/login', to: 'sessions#new'
     post '/login', to: 'sessions#create'
     get '/logout', to: 'sessions#destroy'
+
+    resources :shows, only: [:show] do
+      resources :episodes, only: [:index, :new, :create, :edit, :update]
+    end
+
+    resources :episodes, only: [:show] do
+      resources :playlists, only: [:new, :create]
+    end
+
+    resources :tracks, only: [:create]
+    resources :bands, only: [:create]
+    resources :labels, only: [:create]
+    resources :genres, only: [:create]
   end
 end

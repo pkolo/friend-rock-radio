@@ -4,8 +4,13 @@
     <div class="sidebar-container">
       <div class="widget-container">
         <div class="widget-header">
-          Some Text here
+          Your Shows:
         </div>
+        <ul>
+          <% @shows.each do |show| %>
+            <li><%= show.name %> (edit)</li>
+          <% end %>
+        </ul>
       </div>
     </div>
 
