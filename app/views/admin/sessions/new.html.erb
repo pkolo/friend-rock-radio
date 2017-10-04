@@ -1,6 +1,6 @@
 <div class="login-panel">
-  <%= simple_form_for admin_login_path, method: "POST" do |f| %>
-    <%= f.input :username, label: "username" %>
+  <%= simple_form_for :session, url: admin_login_path, method: "POST" do |f| %>
+    <%= f.input :name, label: "username" %>
     <%= f.input :password, label: "password" %>
     <%= f.button :submit, "submit" %>
   <% end %>

@@ -1,4 +1,14 @@
 class Admin::DashboardController < ApplicationController
+  include Admin::SessionsHelper
+  before_action :require_login
+
   def index
+    @user = current_user
+    binding.pry
   end
+
+  private
+    def require_login
+      redirect_to admin_login_url unless logged_in?
+    end
 end
