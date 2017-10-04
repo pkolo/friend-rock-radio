@@ -1,0 +1,7 @@
+<div class="login-panel">
+  <%= simple_form_for admin_login_path, method: "POST" do |f| %>
+    <%= f.input :username, label: "username" %>
+    <%= f.input :password, label: "password" %>
+    <%= f.button :submit, "submit" %>
+  <% end %>
+</div>
