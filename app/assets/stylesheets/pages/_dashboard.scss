@@ -7,11 +7,27 @@
 
   .editor-container {
     padding: 20px;
+    grid-auto-rows: auto;
+
+    > * {
+      margin-bottom: 20px;
+    }
+  }
+
+  .edit-playlist-section {
+    margin-top: 60px;
+    padding: 10px;
+    border: 1px solid $dark-grey;
+  }
+
+  .edit-playlist-header {
+    font-size: $text-lg;
   }
 }
 
 .new-playlist-item {
   margin-top: 15px;
+  margin-bottom: 15px;
   border: 1px solid $dark-grey;
   padding: 10px;
 }
