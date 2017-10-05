@@ -1,9 +1,35 @@
-.playlist-fields {
-  margin-bottom: 15px;
-  padding: 15px;
-  border: 1px solid #444;
+.input, textarea {
+  margin-bottom: 10px;
 }
 
-input .small {
-  width: 10%;
+.input-large {
+  width: 95%;
+  height: 25px;
+  padding: 10px;
+  font-size: 1.5em;
+}
+
+.textarea-large {
+  width: 95%;
+  height: 125px;
+  font-size: 1.25em;
+  padding: 10px;
+}
+
+.inline-group {
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-gap: 50px;
+
+  > * {
+    display: inline-block;
+
+    input {
+      width: 95%;
+      height: 20px;
+      padding: 5px;
+      font-size: 1em;
+    }
+  }
 }

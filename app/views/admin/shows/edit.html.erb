@@ -1,0 +1,10 @@
+<div class="editor-container">
+  <h1>Editing <%= @show.name %></h1>
+  <%= link_to "+ add a new episode", new_admin_show_episode_path(@show) %>
+  <h3>RecentEpisodes</h3>
+  <% @episodes.each do |episode| %>
+    <div>
+      <%= link_to episode.title, edit_admin_show_episode_path(@show, episode) %>, <%= episode.created_at %>
+    </div>
+  <% end %>
+</div>

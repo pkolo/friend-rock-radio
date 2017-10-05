@@ -1,4 +1,4 @@
-class PlaylistsController < ApplicationController
+class Admin::PlaylistsController < Admin::AdminController
 
   def new
     @episode = Episode.find(params[:episode_id])

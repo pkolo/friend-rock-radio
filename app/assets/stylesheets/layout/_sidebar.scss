@@ -10,5 +10,9 @@
   .widget-container {
     padding: 20px;
     border: 1px solid $text-color;
+
+    .widget-header {
+      font-size: $text-md;
+    }
   }
 }

@@ -1,4 +1,4 @@
-class TracksController < ApplicationController
+class Admin::TracksController < Admin::AdminController
   def create
     @track = Track.new(track_params)
     if @track.save

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FriendRockRadio</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="site-wrapper">
+      <%= render "layouts/header" %>
+      <div class="admin-container">
+        <div class="sidebar-container">
+          <div class="widget-container">
+            <div class="widget-header">
+              Your Shows:
+            </div>
+            <ul>
+              <% current_user.shows.each do |show| %>
+                <li><%= link_to show.name, edit_admin_show_path(show) %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

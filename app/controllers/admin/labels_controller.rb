@@ -1,4 +1,4 @@
-class LabelsController < ApplicationController
+class Admin::LabelsController < Admin::AdminController
   def create
     @label = Label.new(label_params)
     if @label.save
