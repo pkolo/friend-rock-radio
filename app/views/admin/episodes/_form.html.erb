@@ -1,5 +1,6 @@
-<%= simple_form_for [@show, @episode], url: admin_show_episodes_path do |f| %>
+<%= simple_form_for [:admin, @show, @episode] do |f| %>
   <%= f.input :title, label: false, placeholder: 'title', input_html: {class: 'input-large'} %>
   <%= f.input :description, label: false, placeholder: 'description', input_html: {class: 'textarea-large'} %>
+  <%= f.input :published, as: :boolean %>
   <%= f.button :submit, "Update episode info" %>
 <% end %>

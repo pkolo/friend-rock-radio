@@ -37,7 +37,7 @@ class Admin::EpisodesController < Admin::AdminController
     @show = Show.find(params[:show_id])
     @episode = Episode.find(params[:id])
     if @episode.update(episode_params)
-      redirect_to show_episode_path @show, @episode
+      redirect_to edit_admin_show_episode_path @show, @episode
     else
       @errors = @episode.errors.full_messages
       render 'edit'
