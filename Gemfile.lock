@@ -171,7 +171,6 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   geocoder
-  jquery-rails
   listen (>= 3.0.5, < 3.2)
   mediaelement_rails!
   pg (~> 0.18)
