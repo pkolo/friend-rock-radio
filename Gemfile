@@ -31,9 +31,6 @@ gem 'geocoder'
 # Form helpers
 gem 'simple_form'
 
-# Media player
-gem "mediaelement_rails", git: 'https://github.com/pkolo/mediaelement_rails.git'
-
 group :development, :test do
   gem 'pry-rails'
 end

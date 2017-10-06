@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "jquery": "^3.2.1",
+    "mediaelement": "^4.2.6",
     "selectize": "^0.12.4"
   }
 }

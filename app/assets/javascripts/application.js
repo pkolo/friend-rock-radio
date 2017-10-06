@@ -14,5 +14,5 @@
 //= require turbolinks
 //= require jquery/dist/jquery
 //= require selectize/dist/js/standalone/selectize
-//= require mediaelement_rails
+//= require mediaelement/build/mediaelement-and-player
 //= require_tree .
