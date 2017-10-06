@@ -11,8 +11,8 @@
  * It is generally better to create a new file per style scope.
  *
  */
- @import 'selectize';
- @import 'selectize.default';
- @import 'mediaelement_rails.css';
+ @import 'selectize/dist/css/selectize';
+ @import 'selectize/dist/css/selectize.default';
+ @import 'mediaelement/build/mediaelementplayer.css';
 
  @import "main";

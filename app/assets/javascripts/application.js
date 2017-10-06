@@ -10,10 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
 //= require rails-ujs
 //= require turbolinks
-//= require cocoon
-//= require selectize
-//= require mediaelement_rails
+//= require jquery/dist/jquery
+//= require selectize/dist/js/standalone/selectize
+//= require mediaelement/build/mediaelement-and-player
 //= require_tree .

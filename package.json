@@ -1,5 +1,9 @@
 {
   "name": "friend-rock-radio",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "mediaelement": "^4.2.6",
+    "selectize": "^0.12.4"
+  }
 }
