@@ -13,7 +13,6 @@
 //= require jquery
 //= require rails-ujs
 //= require turbolinks
-//= require cocoon
-//= require selectize
+//= require selectize/dist/js/standalone/selectize
 //= require mediaelement_rails
 //= require_tree .
